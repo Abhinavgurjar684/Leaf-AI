@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LeafAI — Smart Leaf Health Detector</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ======== PARTICLES BACKGROUND ======== -->
+  <div id="particles"></div>
+
+  <!-- ======== NAVBAR ======== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <div class="logo-icon">
+          <i class="fas fa-leaf"></i>
+        </div>
+        <span class="logo-text">Leaf<span class="logo-accent">AI</span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#analyzer" class="nav-link">Analyzer</a></li>
+        <li><a href="#how-it-works" class="nav-link">How it Works</a></li>
+        <li><a href="#stats" class="nav-link">Stats</a></li>
+        <li><a href="#tips" class="nav-link">Farmer Tips</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======== HERO SECTION ======== -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-robot"></i>
+        AI Powered Agriculture
+      </div>
+      <h1 class="hero-title">
+        Smart <span class="gradient-text">Leaf Health</span><br/>
+        Detection System
+      </h1>
+      <p class="hero-subtitle">
+        Upload a photo of your crop leaves and our AI will instantly detect whether they are <strong>Healthy</strong>, <strong>Dry</strong>, or affected by <strong>Insects/Disease</strong> — helping farmers protect their harvest.
+      </p>
+      <div class="hero-buttons">
+        <a href="#analyzer" class="btn btn-primary">
+          <i class="fas fa-camera"></i>
+          Analyze Leaf Now
+        </a>
+        <a href="#how-it-works" class="btn btn-outline">
+          <i class="fas fa-play-circle"></i>
+          See How It Works
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-num" data-target="98">0</span><span>%</span>
+          <span class="stat-label">Accuracy</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-num" data-target="50000">0</span><span>+</span>
+          <span class="stat-label">Leaves Analyzed</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-num" data-target="12000">0</span><span>+</span>
+          <span class="stat-label">Farmers Helped</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="floating-card card-healthy">
+        <i class="fas fa-check-circle"></i>
+        <span>Healthy Leaf</span>
+        <small>98% Confidence</small>
+      </div>
+      <div class="hero-phone">
+        <div class="phone-screen">
+          <div class="phone-img-area">
+            <i class="fas fa-leaf phone-leaf-icon"></i>
+            <div class="scan-line"></div>
+          </div>
+          <div class="phone-result">
+            <div class="result-dot healthy-dot"></div>
+            <span>Analyzing...</span>
+          </div>
+        </div>
+      </div>
+      <div class="floating-card card-warning">
+        <i class="fas fa-bug"></i>
+        <span>Pest Detected</span>
+        <small>Needs Attention</small>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll to explore</span>
+      <div class="scroll-arrow"><i class="fas fa-chevron-down"></i></div>
+    </div>
+  </section>
+
+  <!-- ======== DASHBOARD STATS ======== -->
+  <section class="dashboard" id="stats">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge"><i class="fas fa-chart-bar"></i> Dashboard</div>
+        <h2>Real-Time <span class="gradient-text">Farm Analytics</span></h2>
+        <p>Track leaf health across your entire farm with live updates</p>
+      </div>
+      <div class="dashboard-grid">
+        <div class="dash-card dash-healthy">
+          <div class="dash-card-icon"><i class="fas fa-seedling"></i></div>
+          <div class="dash-card-info">
+            <span class="dash-label">Healthy Leaves</span>
+            <span class="dash-value">0</span>
+          </div>
+          <div class="dash-trend up"><i class="fas fa-arrow-trend-up"></i> +12%</div>
+        </div>
+        <div class="dash-card dash-dry">
+          <div class="dash-card-icon"><i class="fas fa-sun"></i></div>
+          <div class="dash-card-info">
+            <span class="dash-label">Dry / Wilting</span>
+            <span class="dash-value">0</span>
+          </div>
+          <div class="dash-trend down"><i class="fas fa-arrow-trend-down"></i> -5%</div>
+        </div>
+        <div class="dash-card dash-pest">
+          <div class="dash-card-icon"><i class="fas fa-bug"></i></div>
+          <div class="dash-card-info">
+            <span class="dash-label">Pest Affected</span>
+            <span class="dash-value">0</span>
+          </div>
+          <div class="dash-trend down"><i class="fas fa-arrow-trend-down"></i> -8%</div>
+        </div>
+        <div class="dash-card dash-total">
+          <div class="dash-card-icon"><i class="fas fa-camera"></i></div>
+          <div class="dash-card-info">
+            <span class="dash-label">Total Scans Today</span>
+            <span class="dash-value">0</span>
+          </div>
+          <div class="dash-trend up"><i class="fas fa-arrow-trend-up"></i> +23%</div>
+        </div>
+      </div>
+
+      <!-- MINI CHART -->
+      <div class="chart-area">
+        <div class="chart-header">
+          <h3>Weekly Health Overview</h3>
+          <div class="chart-legend">
+            <span class="legend-dot healthy-dot"></span>Healthy
+            <span class="legend-dot dry-dot"></span>Dry
+            <span class="legend-dot pest-dot"></span>Pest
+          </div>
+        </div>
+        <div class="bar-chart" id="weeklyChart"></div>
+        <div class="chart-days">
+          <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== LEAF ANALYZER SECTION ======== -->
+  <section class="analyzer-section" id="analyzer">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge"><i class="fas fa-microscope"></i> AI Analyzer</div>
+        <h2>Upload & <span class="gradient-text">Detect Instantly</span></h2>
+        <p>Our AI analyzes leaf color, texture and patterns in seconds</p>
+      </div>
+
+      <div class="analyzer-wrapper">
+        <!-- UPLOAD AREA -->
+        <div class="upload-panel">
+          <div class="upload-zone" id="uploadZone">
+            <div class="upload-icon-wrap">
+              <i class="fas fa-cloud-upload-alt"></i>
+            </div>
+            <h3>Drag & Drop Leaf Image</h3>
+            <p>or click to browse from your device</p>
+            <span class="upload-formats">Supports: JPG, PNG, WEBP, HEIC</span>
+            <input type="file" id="fileInput" accept="image/*" hidden/>
+            <button class="btn btn-upload" onclick="document.getElementById('fileInput').click()">
+              <i class="fas fa-folder-open"></i> Choose Image
+            </button>
+          </div>
+
+          <div class="preview-area" id="previewArea" style="display:none;">
+            <img id="previewImg" src="" alt="Leaf preview"/>
+            <div class="preview-overlay">
+              <div class="scan-animation">
+                <div class="scan-beam"></div>
+              </div>
+            </div>
+            <button class="btn btn-sm" id="changeBtn">
+              <i class="fas fa-redo"></i> Change Image
+            </button>
+          </div>
+
+          <div class="analyze-btn-wrap">
+            <button class="btn btn-analyze" id="analyzeBtn" disabled>
+              <i class="fas fa-brain"></i>
+              <span id="analyzeBtnText">Analyze Leaf</span>
+              <div class="btn-loader" id="btnLoader" style="display:none;"></div>
+            </button>
+          </div>
+        </div>
+
+        <!-- RESULT PANEL -->
+        <div class="result-panel" id="resultPanel">
+          <div class="result-placeholder" id="resultPlaceholder">
+            <i class="fas fa-leaf result-placeholder-icon"></i>
+            <h3>Awaiting Analysis</h3>
+            <p>Upload a leaf photo and click Analyze to get instant AI diagnosis</p>
+            <div class="result-tips">
+              <div class="tip-item"><i class="fas fa-sun"></i> Good lighting helps</div>
+              <div class="tip-item"><i class="fas fa-camera"></i> Clear, close-up shot</div>
+              <div class="tip-item"><i class="fas fa-hand"></i> Steady your hand</div>
+            </div>
+          </div>
+
+          <div class="result-content" id="resultContent" style="display:none;">
+            <div class="result-header">
+              <div class="result-status-icon" id="resultIcon">
+                <i class="fas fa-check-circle" id="resultStatusIcon"></i>
+              </div>
+              <div>
+                <h3 id="resultTitle">Healthy Leaf</h3>
+                <p id="resultSubtitle">Your crop looks great!</p>
+              </div>
+            </div>
+
+            <div class="confidence-bar-wrap">
+              <div class="conf-labels">
+                <span>Confidence</span>
+                <span id="confidenceText">0%</span>
+              </div>
+              <div class="confidence-bar">
+                <div class="confidence-fill" id="confidenceFill"></div>
+              </div>
+            </div>
+
+            <div class="color-analysis" id="colorAnalysis">
+              <h4><i class="fas fa-palette"></i> Color Analysis</h4>
+              <div class="color-swatches" id="colorSwatches"></div>
+            </div>
+
+            <div class="diagnosis-detail" id="diagnosisDetail">
+              <h4><i class="fas fa-stethoscope"></i> Detailed Diagnosis</h4>
+              <p id="diagnosisText"></p>
+            </div>
+
+            <div class="recommendation" id="recommendation">
+              <h4><i class="fas fa-lightbulb"></i> Recommendation</h4>
+              <ul id="recommendationList"></ul>
+            </div>
+
+            <button class="btn btn-outline btn-full" id="saveResultBtn">
+              <i class="fas fa-download"></i> Save Report
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== HOW IT WORKS ======== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge"><i class="fas fa-cogs"></i> Process</div>
+        <h2>How <span class="gradient-text">LeafAI Works</span></h2>
+        <p>Three simple steps to protect your entire harvest</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card" style="--delay:0s">
+          <div class="step-number">01</div>
+          <div class="step-icon"><i class="fas fa-camera-retro"></i></div>
+          <h3>Capture</h3>
+          <p>Take a clear photo of the leaf in natural light. The AI works best with close-up shots showing the full leaf surface.</p>
+          <div class="step-connector"><i class="fas fa-arrow-right"></i></div>
+        </div>
+        <div class="step-card" style="--delay:0.15s">
+          <div class="step-number">02</div>
+          <div class="step-icon"><i class="fas fa-brain"></i></div>
+          <h3>Analyze</h3>
+          <p>Our deep learning model examines color gradients, spot patterns, texture and edge characteristics across millions of pixels.</p>
+          <div class="step-connector"><i class="fas fa-arrow-right"></i></div>
+        </div>
+        <div class="step-card" style="--delay:0.3s">
+          <div class="step-number">03</div>
+          <div class="step-icon"><i class="fas fa-file-medical-alt"></i></div>
+          <h3>Diagnose</h3>
+          <p>Receive instant diagnosis with confidence score, color breakdown, and actionable treatment recommendations.</p>
+        </div>
+      </div>
+
+      <div class="color-guide">
+        <h3><i class="fas fa-palette"></i> Color-Based Detection Guide</h3>
+        <div class="color-cards-grid">
+          <div class="color-guide-card healthy-card">
+            <div class="cg-color-bar"></div>
+            <div class="cg-content">
+              <div class="cg-icon"><i class="fas fa-leaf"></i></div>
+              <h4>Healthy</h4>
+              <p>Vibrant green color indicates good chlorophyll levels, proper hydration, and no disease.</p>
+              <div class="cg-tags">
+                <span>#2d8a4e</span><span>#4caf50</span><span>#66bb6a</span>
+              </div>
+            </div>
+          </div>
+          <div class="color-guide-card dry-card">
+            <div class="cg-color-bar"></div>
+            <div class="cg-content">
+              <div class="cg-icon"><i class="fas fa-sun"></i></div>
+              <h4>Dry / Wilting</h4>
+              <p>Yellowing or brown edges signal dehydration, nutrient deficiency, or excessive sun exposure.</p>
+              <div class="cg-tags">
+                <span>#c8a84b</span><span>#e0a030</span><span>#8b6914</span>
+              </div>
+            </div>
+          </div>
+          <div class="color-guide-card disease-card">
+            <div class="cg-color-bar"></div>
+            <div class="cg-content">
+              <div class="cg-icon"><i class="fas fa-bug"></i></div>
+              <h4>Pest / Disease</h4>
+              <p>Dark spots, unusual patches or discoloration may indicate fungal infection or insect damage.</p>
+              <div class="cg-tags">
+                <span>#8b0000</span><span>#d32f2f</span><span>#4a1900</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== TIPS FOR FARMERS ======== -->
+  <section class="tips-section" id="tips">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge"><i class="fas fa-tractor"></i> Farmer Tips</div>
+        <h2>Smart <span class="gradient-text">Farming Advice</span></h2>
+        <p>Expert tips to keep your crops healthy all season long</p>
+      </div>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-icon" style="background: var(--green-soft); color: var(--green);">
+            <i class="fas fa-tint"></i>
+          </div>
+          <h4>Proper Watering</h4>
+          <p>Water crops early morning to reduce evaporation. Check soil moisture 2 inches deep before watering again.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon" style="background: var(--amber-soft); color: var(--amber);">
+            <i class="fas fa-flask"></i>
+          </div>
+          <h4>Nutrient Balance</h4>
+          <p>Yellow leaves often indicate nitrogen deficiency. Use organic compost or balanced NPK fertilizer regularly.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon" style="background: var(--red-soft); color: var(--red);">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h4>Pest Prevention</h4>
+          <p>Inspect crops every 3 days. Remove infected leaves immediately. Use neem oil spray as natural pesticide.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon" style="background: #e8f4fd; color: #1976d2;">
+            <i class="fas fa-cloud-sun"></i>
+          </div>
+          <h4>Weather Monitoring</h4>
+          <p>Extreme heat or cold can stress plants. Use shade nets during peak summer and cover crops during frost.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon" style="background: #f3e5f5; color: #7b1fa2;">
+            <i class="fas fa-cut"></i>
+          </div>
+          <h4>Pruning Technique</h4>
+          <p>Remove dead or diseased branches with clean, sharp tools. This improves airflow and prevents disease spread.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon" style="background: #e0f2f1; color: #00796b;">
+            <i class="fas fa-recycle"></i>
+          </div>
+          <h4>Organic Farming</h4>
+          <p>Use vermicompost, green manure, and bio-pesticides to maintain healthy soil microbiome and strong plants.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== HISTORY SECTION ======== -->
+  <section class="history-section" id="history">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge"><i class="fas fa-history"></i> History</div>
+        <h2>Recent <span class="gradient-text">Scan History</span></h2>
+        <p>Your last analyzed leaves — all stored locally</p>
+      </div>
+      <div class="history-table-wrap">
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>Preview</th>
+              <th>Status</th>
+              <th>Confidence</th>
+              <th>Time</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="historyBody">
+            <tr class="empty-row">
+              <td colspan="5">
+                <i class="fas fa-leaf"></i>
+                <p>No scans yet. Analyze a leaf to see history here.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <div class="logo-icon"><i class="fas fa-leaf"></i></div>
+            <span class="logo-text">Leaf<span class="logo-accent">AI</span></span>
+          </div>
+          <p>AI-powered plant health detection to help Indian farmers protect their crops and maximize yield.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#home"><i class="fas fa-angle-right"></i> Home</a></li>
+            <li><a href="#analyzer"><i class="fas fa-angle-right"></i> Analyzer</a></li>
+            <li><a href="#how-it-works"><i class="fas fa-angle-right"></i> How it Works</a></li>
+            <li><a href="#tips"><i class="fas fa-angle-right"></i> Farmer Tips</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Disease Guide</h5>
+          <ul>
+            <li><a href="#"><i class="fas fa-angle-right"></i> Powdery Mildew</a></li>
+            <li><a href="#"><i class="fas fa-angle-right"></i> Leaf Blight</a></li>
+            <li><a href="#"><i class="fas fa-angle-right"></i> Rust Disease</a></li>
+            <li><a href="#"><i class="fas fa-angle-right"></i> Bacterial Spot</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h5>Support</h5>
+          <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <span>Kisan Helpline: 1800-180-1551</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>leafai@farmtech.in</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Made in India 🇮🇳</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 LeafAI — School Project. Built with ❤️ for Indian Farmers.</p>
+        <p class="footer-credits">Powered by AI & Computer Vision</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======== TOAST NOTIFICATION ======== -->
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toastMsg">Action completed!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
